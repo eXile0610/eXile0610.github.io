@@ -13,7 +13,7 @@
 
 
 
-<title>mathematics | eXile</title>
+<title>Questions during this seminar | eXile</title>
 
 
 
@@ -40,6 +40,45 @@
 
     
     
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
         
     
 
@@ -130,13 +169,14 @@
                 <div class="container">
     <article class="post-wrap page">
         
-        <h2 class="post-title">mathematics</h2>
+        <h2 class="post-title">Questions during this seminar</h2>
         
         <section class="post-content">
-            <ul>
-<li><a href="/mathematics/fractal_geometry">Fractal Geometry</a></li>
-<li><a href="/mathematics/modular_forms">Modular Forms</a></li>
-</ul>
+            <h3 id="Box-counting-demensions"><a href="#Box-counting-demensions" class="headerlink" title="Box-counting demensions"></a>Box-counting demensions</h3><p>example of $\underline{dim}_B \neq \overline{dim}_B$. </p>
+<h3 id="Hausdorff-measure-and-Hausdorff-dimension"><a href="#Hausdorff-measure-and-Hausdorff-dimension" class="headerlink" title="Hausdorff measure and Hausdorff dimension"></a>Hausdorff measure and Hausdorff dimension</h3><p>Calculating Hausdorff measure for Cantor dust and middle third Cantor set. </p>
+<p>Stronger version for <strong>covering lemma</strong>, prove that $\mathcal{H}^s(F) \leq 2^s\mu(\mathbb{R}^n)&#x2F;c$.<br>(HINT: Using Vitali covering lemma) </p>
+<p>Frost lemma</p>
+<p>Completeness of Hausdorff metric</p>
 
         </section>
     </article>
