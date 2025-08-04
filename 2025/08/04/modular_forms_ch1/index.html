@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="eXile">
+
+
+
+
+
+<title>GTM228/Chapter1. Modular Forms, Elliptic Curves, and Modular Curves | eXile&#39;s archives</title>
+
+
+
+    <link rel="icon" href="/robin.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">eXile&#39;s archives</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/category">Categories</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">eXile&#39;s archives</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/category">Categories</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">GTM228/Chapter1. Modular Forms, Elliptic Curves, and Modular Curves</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">eXile</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 4, 2025&nbsp;&nbsp;17:35:41</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/mathematics/">mathematics</a>
+                            
+                                <a href="/categories/mathematics/modular-forms/">modular forms</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="1-Modular-Forms-Elliptic-Curves-and-Modular-Curves"><a href="#1-Modular-Forms-Elliptic-Curves-and-Modular-Curves" class="headerlink" title="1. Modular Forms, Elliptic Curves, and Modular Curves"></a>1. Modular Forms, Elliptic Curves, and Modular Curves</h1><h2 id="1-1-First-definition-and-examples"><a href="#1-1-First-definition-and-examples" class="headerlink" title="1.1 First definition and examples"></a>1.1 First definition and examples</h2><ul>
+<li><p><strong>Definition:</strong> The <em>modular group</em> is $SL_2(\mathbb{Z}) &#x3D; \left{ \begin{pmatrix}a &amp; b \ c &amp; d \\end{pmatrix}: a, b, c, d \in \mathbb{Z}, ad - bc &#x3D; 1 \right}( &#x3D; \langle\begin{pmatrix}1 &amp; 1 \ 0 &amp; 1 \\end{pmatrix}, \begin{pmatrix}0 &amp; -1 \ 1 &amp; 0 \\end{pmatrix}\rangle)$ </p>
+<ul>
+<li>group action on $\mathbb{H}$: $\forall \gamma &#x3D; \begin{pmatrix}a &amp; b \ c &amp; d \\end{pmatrix} \in SL_2(\mathbb{Z}), \begin{pmatrix}a &amp; b \ c &amp; d \\end{pmatrix}(\tau) &#x3D; \begin{cases}<br>  \frac{a\tau + b}{c\tau + d} &amp; \text{if } \tau \in \mathbb{C} \<br>  \frac{a}{c} &amp; \text{if } \tau &#x3D; \infty<br>  \end{cases}$ </li>
+<li><strong>Property:</strong> $Im(\gamma(\tau)) &#x3D; \frac{Im(\tau)}{\left| c\tau + d\right|^2}, \tau \in \mathbb{H}, \gamma(\tau) \in \mathbb{H}$ </li>
+<li><strong>Property:</strong> <em>(association)</em> $(\gamma\gamma^{‘})(\tau) &#x3D; \gamma(\gamma^{‘}(\tau))$.</li>
+</ul>
+</li>
+<li><p><strong>Definition:</strong> Let $G$ be a group and $S$ be a topological $G$-set. Then a closed subset $F$ of $S$ is called a <em>fundamental domain</em> of $G$ in $S$ if $S$ is the union of conjugates of $F$, $i.e., S &#x3D; \sqcup_{g \in G}gF$, and the intersection of any two conjugates has no interior. </p>
+<ul>
+<li><em>e.g.</em> fundamental domain for the action of the modular group $\Lambda$ on the upper half-plane $\mathbb{H}$:</li>
+</ul>
+</li>
+<li><p><strong>Definition:</strong> Assume $f: \mathbb{H} \to \mathbb{C}$ is meromorphic function, if $f(\gamma(\tau)) &#x3D; (c\tau + d)^kf(\tau), \forall \gamma \in SL_2(\mathbb{Z}), \tau \in \mathbb{H}$, we call $f$ is <em>weakly modular of weight $k$</em>. </p>
+<ul>
+<li><em>e.g.</em> weak modularity of weight 0 is $SL_2(\mathbb{Z})$-invariance. </li>
+<li><em>e.g.</em> $k &#x3D; 2, f(\gamma(\tau))d(\gamma(\tau)) &#x3D; f(\tau)d\tau$. </li>
+<li><em>e.g.</em> $k$ odd number, take $\gamma &#x3D; -I$, we have $f(\tau) &#x3D; (-1)^kf(\tau) \Rightarrow f \equiv 0$. </li>
+<li><strong>Property:</strong> $f(\gamma(\tau))$ and $f(\tau)$ has same zeros and poles.</li>
+</ul>
+</li>
+<li><p><strong>Definition:</strong> Let $k \in \mathbb{Z}, f : \mathbb{H} \to \mathbb{C}$, if $f$ satisfies: </p>
+<ul>
+<li>(1) $f$ is holomorphic in $\mathbb{H}$; </li>
+<li>(2) $f$ is weakly modular of weight $k$; </li>
+<li>(3) $f$ is holomorphic at $\infty$.<br>Then we call $f$ <em>modular form of weight $k$</em>. <ul>
+<li>discussion for (3):</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Take $\gamma &#x3D; \begin{pmatrix} 1 &amp; 1 \ 0 &amp; 1 \\end{pmatrix}$, we have $f(\tau + 1) &#x3D; f(\tau)$.<br>Function that satisfies $\mathbb{H} \to \mathbb{D}^{‘} &#x3D; \mathbb{D} \backslash {0}, \tau \mapsto e^{2\pi i\tau} &#x3D; q$ is holomorphic, $\mathbb{Z}$-periodic.<br>We define $g : \mathbb{D}^{‘} \to \mathbb{C}, q \mapsto f(\frac{\log(q)}{2\pi i})$, we have $f(\tau) &#x3D; g(e^{2\pi i}) &#x3D; g(q)$.<br>By Laurent expansion, $g(q) &#x3D; \Sigma_{n &#x3D; -\infty}^{+\infty}a_nq^n, q &#x3D; e^{2\pi i \tau}$. Since $\left| q\right| &#x3D; e^{-2\pi Im(\tau)}$, we immediately get that $q \to 0 \iff Im(\tau) \to +\infty, \tau \in \mathbb{H}$.<br>So <em>$f$ holomorphic at $\infty$ $\Leftrightarrow$ $g$ could be holomorphically extended in $\mathbb{D} \iff f(\tau) &#x3D; g(q) &#x3D; \Sigma_{n &#x3D; 0}^{+\infty}a_nq^n, q &#x3D; e^{2\pi i\tau}$</em>.<br>    - (4) If $a_0 &#x3D; 0$, we call $f$ a <em>cusp form</em>. </p>
+<pre><code>    - The set of modular forms of weight $k$ is denoted as $\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))$, the set of cusp forms of weight $k$ is denoted as $\mathcal&#123;S&#125;_k(SL_2(\mathbb&#123;Z&#125;))$. 
+
+- **Property:** $\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))$ is vector space over $\mathbb&#123;C&#125;$, since $f$ is holomorphic at $\infty$, $dim(\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))) &lt; \infty$. 
+We have $\oplus_&#123;k \in \mathbb&#123;Z&#125;&#125;\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;)) : = \mathcal&#123;M&#125;(SL_2(\mathbb&#123;Z&#125;))$ (graded ring), $\oplus_&#123;k \in \mathbb&#123;Z&#125;&#125;\mathcal&#123;S&#125;_k(SL_2(\mathbb&#123;Z&#125;)) : = \mathcal&#123;S&#125;(SL_2(\mathbb&#123;Z&#125;))$, $\mathcal&#123;S&#125;$ is an ideal of $\mathcal&#123;M&#125;$. 
+- *e.g.* zero function is a modular form of every weight; constant function is a modular form of weight 0. 
+- *e.g.* **Eisenstein series:** $G_k(\tau) = \Sigma_&#123;(c, d)&#125;^&#123;&#39;&#125;\frac&#123;1&#125;&#123;(c\tau + d)^k&#125;, k &gt; 2$ even number, $\Sigma_&#123;(c, d)&#125;^&#123;&#39;&#125;$ means summing up $(c, d) \in \mathbb&#123;Z&#125;^2 \backslash \&#123;(0, 0)\&#125;$. 
+    - $G_k(\tau)$ absolutely converges for all $\tau \in \mathbb&#123;H&#125;$, converges uniformly in any compact subset of $\mathbb&#123;H&#125;$ $\Rightarrow G_k$ is holomorphic in $\mathbb&#123;H&#125;$ and can be rearranged. 
+    $\gamma = \begin&#123;pmatrix&#125;a &amp; b \\ c &amp; d \\\end&#123;pmatrix&#125; \in SL_2(\mathbb&#123;Z&#125;)$, $G_k(\gamma(\tau)) = \Sigma^&#123;&#39;&#125;_&#123;(m, n)&#125;\frac&#123;1&#125;&#123;(m(\frac&#123;a\tau + b&#125;&#123;c\tau + d&#125;) + n)^k&#125; = (c\tau + d)^k\Sigma_&#123;(m, n)&#125;^&#123;&#39;&#125;\frac&#123;1&#125;&#123;((ma + nc)\tau + (mb + nd))^k&#125; = (c\tau + d)^kG_k(\tau) \Rightarrow G_k(\tau) \in \mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))$ where $k &gt; 2$ is even.
+</code></pre>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>eXile</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://exile0610.github.io/2025/08/04/modular_forms_ch1/">https://exile0610.github.io/2025/08/04/modular_forms_ch1/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span></span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2025/07/29/first_post/"></a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© eXile | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
