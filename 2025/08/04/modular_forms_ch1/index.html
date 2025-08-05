@@ -270,69 +270,61 @@
 
         <div class="post-content">
             <h1 id="1-Modular-Forms-Elliptic-Curves-and-Modular-Curves"><a href="#1-Modular-Forms-Elliptic-Curves-and-Modular-Curves" class="headerlink" title="1. Modular Forms, Elliptic Curves, and Modular Curves"></a>1. Modular Forms, Elliptic Curves, and Modular Curves</h1><h2 id="1-1-First-definition-and-examples"><a href="#1-1-First-definition-and-examples" class="headerlink" title="1.1 First definition and examples"></a>1.1 First definition and examples</h2><ul>
-<li><p><strong>Definition:</strong> The <em>modular group</em> is $SL_2(\mathbb{Z}) &#x3D; \left{ \begin{pmatrix}a &amp; b \ c &amp; d \\end{pmatrix}: a, b, c, d \in \mathbb{Z}, ad - bc &#x3D; 1 \right}( &#x3D; \langle\begin{pmatrix}1 &amp; 1 \ 0 &amp; 1 \\end{pmatrix}, \begin{pmatrix}0 &amp; -1 \ 1 &amp; 0 \\end{pmatrix}\rangle)$ </p>
+<li><p><strong>Def:</strong> The <em>modular group</em> is $SL_2(\mathbb{Z}) = \left\{ \begin{pmatrix}a &amp; b \\ c &amp; d \\\end{pmatrix}: a, b, c, d \in \mathbb{Z}, ad - bc = 1 \right\}$ </p>
 <ul>
-<li>group action on $\mathbb{H}$: $\forall \gamma &#x3D; \begin{pmatrix}a &amp; b \ c &amp; d \\end{pmatrix} \in SL_2(\mathbb{Z}), \begin{pmatrix}a &amp; b \ c &amp; d \\end{pmatrix}(\tau) &#x3D; \begin{cases}<br>  \frac{a\tau + b}{c\tau + d} &amp; \text{if } \tau \in \mathbb{C} \<br>  \frac{a}{c} &amp; \text{if } \tau &#x3D; \infty<br>  \end{cases}$ </li>
-<li><strong>Property:</strong> $Im(\gamma(\tau)) &#x3D; \frac{Im(\tau)}{\left| c\tau + d\right|^2}, \tau \in \mathbb{H}, \gamma(\tau) \in \mathbb{H}$ </li>
-<li><strong>Property:</strong> <em>(association)</em> $(\gamma\gamma^{‘})(\tau) &#x3D; \gamma(\gamma^{‘}(\tau))$.</li>
+<li>generators: $\begin{pmatrix}1 &amp; 1 \\ 0 &amp; 1 \\\end{pmatrix}, \begin{pmatrix}0 &amp; -1 \\ 1 &amp; 0 \\\end{pmatrix}$</li>
+<li>group action on $\mathbb{H}$: $\forall \gamma = \begin{pmatrix}a &amp; b \\ c &amp; d \\\end{pmatrix} \in SL_2(\mathbb{Z}), \begin{pmatrix}a &amp; b \\ c &amp; d \\\end{pmatrix}(\tau) = \frac{a\tau + b}{c\tau + d}$ for $\tau \in \mathbb{C}$ or $\frac{a}{c}$ for $\tau = \infty$.    </li>
+<li><strong>Prop:</strong> $Im(\gamma(\tau)) = \frac{Im(\tau)}{\left| c\tau + d\right|^2}, \tau \in \mathbb{H}, \gamma(\tau) \in \mathbb{H}$ </li>
+<li><strong>Prop:</strong> <em>(association)</em> $(\gamma\gamma^{‘})(\tau) = \gamma(\gamma^{‘}(\tau))$. </li>
 </ul>
 </li>
-<li><p><strong>Definition:</strong> Let $G$ be a group and $S$ be a topological $G$-set. Then a closed subset $F$ of $S$ is called a <em>fundamental domain</em> of $G$ in $S$ if $S$ is the union of conjugates of $F$, $i.e., S &#x3D; \sqcup_{g \in G}gF$, and the intersection of any two conjugates has no interior. </p>
+<li><p><strong>Def:</strong> Let $G$ be a group and $S$ be a topological $G$-set. Then a closed subset $F$ of $S$ is called a <em>fundamental domain</em> of $G$ in $S$ if $S$ is the union of conjugates of $F$, $i.e., S = \sqcup_{g \in G}gF$, and the intersection of any two conjugates has no interior. </p>
 <ul>
-<li><em>e.g.</em> fundamental domain for the action of the modular group $\Lambda$ on the upper half-plane $\mathbb{H}$:</li>
+<li><em>e.g.</em> fundamental domain for the action of the modular group $\Lambda$ on the upper half-plane $\mathbb{H}$: </li>
 </ul>
 </li>
-<li><p><strong>Definition:</strong> Assume $f: \mathbb{H} \to \mathbb{C}$ is meromorphic function, if $f(\gamma(\tau)) &#x3D; (c\tau + d)^kf(\tau), \forall \gamma \in SL_2(\mathbb{Z}), \tau \in \mathbb{H}$, we call $f$ is <em>weakly modular of weight $k$</em>. </p>
+<li><p><strong>Def:</strong> Assume $f: \mathbb{H} \to \mathbb{C}$ is meromorphic function, if $f(\gamma(\tau)) = (c\tau + d)^kf(\tau), \forall \gamma \in SL_2(\mathbb{Z}), \tau \in \mathbb{H}$, we call $f$ is <em>weakly modular of weight $k$</em>. </p>
 <ul>
 <li><em>e.g.</em> weak modularity of weight 0 is $SL_2(\mathbb{Z})$-invariance. </li>
-<li><em>e.g.</em> $k &#x3D; 2, f(\gamma(\tau))d(\gamma(\tau)) &#x3D; f(\tau)d\tau$. </li>
-<li><em>e.g.</em> $k$ odd number, take $\gamma &#x3D; -I$, we have $f(\tau) &#x3D; (-1)^kf(\tau) \Rightarrow f \equiv 0$. </li>
-<li><strong>Property:</strong> $f(\gamma(\tau))$ and $f(\tau)$ has same zeros and poles.</li>
+<li><em>e.g.</em> $k = 2, f(\gamma(\tau))d(\gamma(\tau)) = f(\tau)d\tau$. </li>
+<li><em>e.g.</em> $k$ odd number, take $\gamma = -I$, we have $f(\tau) = (-1)^kf(\tau) \Rightarrow f \equiv 0$. </li>
+<li><strong>Prop:</strong> $f(\gamma(\tau))$ and $f(\tau)$ has same zeros and poles. </li>
 </ul>
 </li>
-<li><p><strong>Definition:</strong> Let $k \in \mathbb{Z}, f : \mathbb{H} \to \mathbb{C}$, if $f$ satisfies: </p>
+<li><p><strong>Def:</strong> Let $k \in \mathbb{Z}, f : \mathbb{H} \to \mathbb{C}$, if $f$ satisfies: </p>
 <ul>
 <li>(1) $f$ is holomorphic in $\mathbb{H}$; </li>
 <li>(2) $f$ is weakly modular of weight $k$; </li>
 <li>(3) $f$ is holomorphic at $\infty$.<br>Then we call $f$ <em>modular form of weight $k$</em>. <ul>
-<li>discussion for (3):</li>
+<li>discussion for (3):<br>Take $\gamma = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \\\end{pmatrix}$, we have $f(\tau + 1) = f(\tau)$.<br>Function that satisfies $\mathbb{H} \to \mathbb{D}^{‘} = \mathbb{D} \backslash \{0\}, \tau \mapsto e^{2\pi i\tau} = q$ is holomorphic, $\mathbb{Z}$-periodic.<br>We define $g : \mathbb{D}^{‘} \to \mathbb{C}, q \mapsto f(\frac{\log(q)}{2\pi i})$, we have $f(\tau) = g(e^{2\pi i}) = g(q)$.<br>By Laurent expansion, $g(q) = \Sigma_{n = -\infty}^{+\infty}a_nq^n, q = e^{2\pi i \tau}$. Since $\left| q\right| = e^{-2\pi Im(\tau)}$, we immediately get that $q \to 0 \iff Im(\tau) \to +\infty, \tau \in \mathbb{H}$.<br>So <em>$f$ holomorphic at $\infty$ $\Leftrightarrow$ $g$ could be holomorphically extended in $\mathbb{D} \iff f(\tau) = g(q) = \Sigma_{n = 0}^{+\infty}a_nq^n, q = e^{2\pi i\tau}$</em>. </li>
+</ul>
+</li>
+<li>(4) If $a_0 = 0$, we call $f$ a <em>cusp form</em>. </li>
+</ul>
+</li>
+<li><p>The set of modular forms of weight $k$ is denoted as $\mathcal{M}_k(SL_2(\mathbb{Z}))$, the set of cusp forms of weight $k$ is denoted as $\mathcal{S}_k(SL_2(\mathbb{Z}))$. </p>
+</li>
+<li><p><strong>Prop:</strong> For $\mathcal{M}_k(SL_2(\mathbb{Z}))$ and $\mathcal{S}_k(SL_2(\mathbb{Z}))$: </p>
+<ul>
+<li>$\mathcal{M}_k(SL_2(\mathbb{Z}))$ is vector space over $\mathbb{C}$, since $f$ is holomorphic at $\infty$, $dim(\mathcal{M}_k(SL_2(\mathbb{Z}))) &lt; \infty$.   </li>
+<li>$\oplus_{k \in \mathbb{Z}}\mathcal{M}<em>k(SL_2(\mathbb{Z})) : = \mathcal{M}(SL_2(\mathbb{Z}))$ is a graded ring,<br>$\oplus</em>{k \in \mathbb{Z}}\mathcal{S}_k(SL_2(\mathbb{Z})) : = \mathcal{S}(SL_2(\mathbb{Z}))$ is an ideal of $\mathcal{M}$.  </li>
+</ul>
+</li>
+<li><p><em>e.g.</em> zero function is a modular form of every weight; constant function is a modular form of weight 0. </p>
+</li>
+<li><p><em>e.g.</em> <strong>Eisenstein series:</strong> $G_k(\tau) = \Sigma_{(c, d)}^{‘}\frac{1}{(c\tau + d)^k}, k &gt; 2$ even number, $\Sigma_{(c, d)}^{‘}$ means summing up $(c, d) \in \mathbb{Z}^2 \backslash \{(0, 0)\}$. </p>
+<ul>
+<li>$G_k(\tau)$ absolutely converges for all $\tau \in \mathbb{H}$, converges uniformly in any compact subset of $\mathbb{H}$ $\Rightarrow G_k$ is holomorphic in $\mathbb{H}$ and can be rearranged.<br>$\gamma = \begin{pmatrix}a &amp; b \\ c &amp; d \\\end{pmatrix} \in SL_2(\mathbb{Z})$, $G_k(\gamma(\tau)) = \Sigma^{‘}<em>{(m, n)}\frac{1}{(m(\frac{a\tau + b}{c\tau + d}) + n)^k} = (c\tau + d)^k\Sigma</em>{(m, n)}^{‘}\frac{1}{((ma + nc)\tau + (mb + nd))^k} = (c\tau + d)^kG_k(\tau) \Rightarrow G_k(\tau) \in \mathcal{M}_k(SL_2(\mathbb{Z}))$ where $k &gt; 2$ is even.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<p>Take $\gamma &#x3D; \begin{pmatrix} 1 &amp; 1 \ 0 &amp; 1 \\end{pmatrix}$, we have $f(\tau + 1) &#x3D; f(\tau)$.<br>Function that satisfies $\mathbb{H} \to \mathbb{D}^{‘} &#x3D; \mathbb{D} \backslash {0}, \tau \mapsto e^{2\pi i\tau} &#x3D; q$ is holomorphic, $\mathbb{Z}$-periodic.<br>We define $g : \mathbb{D}^{‘} \to \mathbb{C}, q \mapsto f(\frac{\log(q)}{2\pi i})$, we have $f(\tau) &#x3D; g(e^{2\pi i}) &#x3D; g(q)$.<br>By Laurent expansion, $g(q) &#x3D; \Sigma_{n &#x3D; -\infty}^{+\infty}a_nq^n, q &#x3D; e^{2\pi i \tau}$. Since $\left| q\right| &#x3D; e^{-2\pi Im(\tau)}$, we immediately get that $q \to 0 \iff Im(\tau) \to +\infty, \tau \in \mathbb{H}$.<br>So <em>$f$ holomorphic at $\infty$ $\Leftrightarrow$ $g$ could be holomorphically extended in $\mathbb{D} \iff f(\tau) &#x3D; g(q) &#x3D; \Sigma_{n &#x3D; 0}^{+\infty}a_nq^n, q &#x3D; e^{2\pi i\tau}$</em>.<br>    - (4) If $a_0 &#x3D; 0$, we call $f$ a <em>cusp form</em>. </p>
-<pre><code>    - The set of modular forms of weight $k$ is denoted as $\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))$, the set of cusp forms of weight $k$ is denoted as $\mathcal&#123;S&#125;_k(SL_2(\mathbb&#123;Z&#125;))$. 
-
-- **Property:** $\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))$ is vector space over $\mathbb&#123;C&#125;$, since $f$ is holomorphic at $\infty$, $dim(\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))) &lt; \infty$. 
-We have $\oplus_&#123;k \in \mathbb&#123;Z&#125;&#125;\mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;)) : = \mathcal&#123;M&#125;(SL_2(\mathbb&#123;Z&#125;))$ (graded ring), $\oplus_&#123;k \in \mathbb&#123;Z&#125;&#125;\mathcal&#123;S&#125;_k(SL_2(\mathbb&#123;Z&#125;)) : = \mathcal&#123;S&#125;(SL_2(\mathbb&#123;Z&#125;))$, $\mathcal&#123;S&#125;$ is an ideal of $\mathcal&#123;M&#125;$. 
-- *e.g.* zero function is a modular form of every weight; constant function is a modular form of weight 0. 
-- *e.g.* **Eisenstein series:** $G_k(\tau) = \Sigma_&#123;(c, d)&#125;^&#123;&#39;&#125;\frac&#123;1&#125;&#123;(c\tau + d)^k&#125;, k &gt; 2$ even number, $\Sigma_&#123;(c, d)&#125;^&#123;&#39;&#125;$ means summing up $(c, d) \in \mathbb&#123;Z&#125;^2 \backslash \&#123;(0, 0)\&#125;$. 
-    - $G_k(\tau)$ absolutely converges for all $\tau \in \mathbb&#123;H&#125;$, converges uniformly in any compact subset of $\mathbb&#123;H&#125;$ $\Rightarrow G_k$ is holomorphic in $\mathbb&#123;H&#125;$ and can be rearranged. 
-    $\gamma = \begin&#123;pmatrix&#125;a &amp; b \\ c &amp; d \\\end&#123;pmatrix&#125; \in SL_2(\mathbb&#123;Z&#125;)$, $G_k(\gamma(\tau)) = \Sigma^&#123;&#39;&#125;_&#123;(m, n)&#125;\frac&#123;1&#125;&#123;(m(\frac&#123;a\tau + b&#125;&#123;c\tau + d&#125;) + n)^k&#125; = (c\tau + d)^k\Sigma_&#123;(m, n)&#125;^&#123;&#39;&#125;\frac&#123;1&#125;&#123;((ma + nc)\tau + (mb + nd))^k&#125; = (c\tau + d)^kG_k(\tau) \Rightarrow G_k(\tau) \in \mathcal&#123;M&#125;_k(SL_2(\mathbb&#123;Z&#125;))$ where $k &gt; 2$ is even.
-</code></pre>
 
         </div>
 
         
             <section class="post-copyright">
                 
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>eXile</span>
-                    </p>
                 
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="https://exile0610.github.io/2025/08/04/modular_forms_ch1/">https://exile0610.github.io/2025/08/04/modular_forms_ch1/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span></span>
-                    </p>
                 
                 
 
